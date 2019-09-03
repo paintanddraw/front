@@ -1,0 +1,21 @@
+<div id="login"></div>
+
+<script>
+    const Vue = require('vue')
+    var apple = Vue.extend({
+        template: "<p>我是构造函数创建：自身参数：{{a}}|外部传参：{{b}}</p>",
+        data: function() {
+            return {
+                a: "a"
+            }
+        },
+        props: ["b"]
+    });
+
+    //挂载构造函数
+    new apple({
+        propsData: {
+            b: 'Vue.extend'
+        }
+    }).$mount('#login');
+</script>
